@@ -3,5 +3,6 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/jdbc-demo/src/com/itheima/jdbc/druid/example/Brandtest.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/jdbc-demo/src/com/itheima/jdbc/druid/jdbc/JDBCDemo.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/mybatis-demo/src/main/resources/com/itheima/mapper/UserMapper.xml" dialect="GenericSQL" />
   </component>
 </project>

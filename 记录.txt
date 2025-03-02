@@ -1,0 +1,32 @@
+数据库连接池：允许程序重复使用一个现有的链接，不用新建连接
+    好处：资源复用，提升系统响应速度，避免数据库连接遗漏
+    标准接口：DataSource
+            Connection getConnectio（）建立连接
+    经典连接池：Driud
+数据类型尽量不要用基本数据类型，因为有默认值，例int默认0，应用integer
+
+1.sql语句怎么写
+2.有没有参数
+3.返回什么结果
+jbdc缺点：每次使用都要编写重复且繁杂的连接信息和结果打包，并且将sql语句写死在了代码中，不宜维护
+         和修改。
+
+maven工具：提供了标准的项目格式，构建流程和一个依赖管理机制
+    maven有三个生命周期：clean：清理
+                      default：核心工作，编译、测试、打包、安装等
+                      site：产生报告，发布站点等
+                （同一生命周期执行后面的指令时前面的所有指令都会自动执行）
+mybatis：持久层框架，简化JDBC的开发，免除了几乎所有的JDBC代码以及设置参数和获取结果集的工作
+         将连接信息和结果打包写到mybatis的配置文件里，并使用XML 配置文件或一个预先配置的
+          Configuration 实例来构建出 SqlSessionFactory 实例。
+     错误记录：1.<mapper>标签使用xml文件应该使用resource属性，若是mapper接口则使用class
+             2.namespace 应该指向 Mapper 接口的全限定名，而不是文件路径。
+               应是<mapper namespace="com.itheima.mapper.UserMapper">
+             3.MyBatisDemo中sqlSession.selectList("test.selectAll") 中的命名空间
+             test 错误。应改为com.itheima.mapper.UserMapper.selectAll
+
+
+             重要！！！
+             4.mybatis-config.xml中，mysql 8.x版本驱动类名是com.mysql.cj.jdbc.Driver
+             注意cj！！！
+其他注意：resources文件下新建目录不能命名为xxx.xxx.xxx应该是xxx/xxx/xxx

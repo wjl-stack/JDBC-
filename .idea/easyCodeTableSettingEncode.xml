@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EasyCodeTableSetting">
+    <option name="tableInfoMap">
+      <map>
+        <entry key="db1.course" value="eyJuYW1lIjoiQ291cnNlIiwicHJlTmFtZSI6IiIsInRlbXBsYXRlR3JvdXBOYW1lIjoiRGVmYXVsdCIsImZ1bGxDb2x1bW4iOlt7Im5hbWUiOiJjbm8iLCJ0eXBlIjoiamF2YS5sYW5nLlN0cmluZyIsImN1c3RvbSI6ZmFsc2UsImV4dCI6Int9In0seyJuYW1lIjoiY25hbWUiLCJ0eXBlIjoiamF2YS5sYW5nLlN0cmluZyIsImN1c3RvbSI6ZmFsc2UsImV4dCI6Int9In0seyJuYW1lIjoiY3BubyIsInR5cGUiOiJqYXZhLmxhbmcuU3RyaW5nIiwiY3VzdG9tIjpmYWxzZSwiZXh0Ijoie30ifSx7Im5hbWUiOiJjY3JlZGl0IiwidHlwZSI6ImphdmEubGFuZy5JbnRlZ2VyIiwiY3VzdG9tIjpmYWxzZSwiZXh0Ijoie30ifV0sInNhdmVQYWNrYWdlTmFtZSI6IiIsInNhdmVQYXRoIjoiLi9qZGJjLWRlbW8vc3JjIiwic2F2ZU1vZGVsTmFtZSI6ImpkYmMtZGVtbyJ9" />
+      </map>
+    </option>
+  </component>
+</project>
