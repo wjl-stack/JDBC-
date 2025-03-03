@@ -9,8 +9,5 @@
         <module name="mybatis-demo" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="maven-demo" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>

@@ -6,8 +6,13 @@
 <!--namespace:命名空间
     id:sql语句的唯一标识
 -->
+<!--使用包扫描将com.itheima.pojo.User方法简化为user方法-->
 <mapper namespace="com.itheima.mapper.UserMapper">
-    <select id="selectAll" resultType="com.itheima.pojo.User">
+    <select id="selectAll" resultType="User">
         select * from tb_user;
+    </select>
+    <select id="selectById" resultType="com.itheima.pojo.User">
+        select  *
+        from tb_user where id= #{id};
     </select>
 </mapper>

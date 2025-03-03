@@ -8,9 +8,11 @@
 1.sql语句怎么写
 2.有没有参数
 3.返回什么结果
+
+
+3月2日
 jbdc缺点：每次使用都要编写重复且繁杂的连接信息和结果打包，并且将sql语句写死在了代码中，不宜维护
          和修改。
-
 maven工具：提供了标准的项目格式，构建流程和一个依赖管理机制
     maven有三个生命周期：clean：清理
                       default：核心工作，编译、测试、打包、安装等
@@ -30,3 +32,49 @@ mybatis：持久层框架，简化JDBC的开发，免除了几乎所有的JDBC�
              4.mybatis-config.xml中，mysql 8.x版本驱动类名是com.mysql.cj.jdbc.Driver
              注意cj！！！
 其他注意：resources文件下新建目录不能命名为xxx.xxx.xxx应该是xxx/xxx/xxx
+
+3.3日
+<typealiases>可以定义类型别名
+配置config文件时，其中的标签要按照官网顺序配置
+当数据库类名为xxx_xxx，而类方法名为xxxXxx时sql语句会因为属性名不一样而无法封装结果导致返回null
+    解决方法：
+    在config文件中，加入
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    表示自动启用驼峰命名
+    还可以在mapper文件中定义resultmp字段，例：
+    <resultMap id="UserResultMap" type="User">
+        <result property="userId" column="user_id"/>
+        <result property="userName" column="user_name"/>
+    </resultMap>
+    注意！！mapper文件中sql语句的resultType需要改为resultMap
+
+  *参数占位符：
+          1.#{}：会将其替换为 ？，为了防止sql注入
+          2.${}：拼sql，会存在sql注入
+          3.使用时机
+              *参数传递时：#{}
+              *表名或列名不固定的情况下：${}会存在sql注入问题
+*条件查询
+    *参数接收
+        1.散装参数：如果方法中有多个参数，需要使用@Param
+        2.对象参数：对象属性名称要和参数占位符一致
+        3.map集合参数
+
+*动态sql：加入条件判断,1=1是因为where后不能直接加and，所以需要缓冲，并且若去掉第一个and，当第
+        一个表达式不满足时会导致第二句中的and直接连在where后(加入恒等式1=1，然后所有语句都加and）
+        解决方法2：mybatis有一个<where>标签，可以自动去掉where后的and
+    where 1=1
+                <if test = "status!= null">
+                  and  status = #{status}
+                </if>
+
+                <if test = "companyName != null and companyName != '' ">
+                  and  company_name like #{companyName}
+                </if>
+
+                <if test = "brandName != null and brandName != '' ">
+                  and  brand_name like #{brandName}
+                </if>;
+    动态修改同理
